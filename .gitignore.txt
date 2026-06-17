@@ -1,0 +1,3 @@
+# .gitignore Datei erstellen
+.DS_Store
+Thumbs.db

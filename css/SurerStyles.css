@@ -1,0 +1,34 @@
+/* =========================================
+   HEADER (BANNER) BEREICH MIT HINTERGRUNDBILD
+   ========================================= */
+.site-header {
+    /* Hintergrundbild mit dunklem Overlay für perfekte Lesbarkeit der Schrift */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('headerbild.jpeg') center/cover no-repeat;
+    color: white;
+    position: relative; 
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Optimierter Kontrast für die Content-Karten */
+.content-card {
+    background: #ffffff; /* Reines Weiss für exzellente Lesbarkeit */
+    border: 1px solid #e2ebd5;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(44, 77, 27, 0.05);
+    margin-bottom: 3rem;
+}
+
+/* Aktive Seite (wird per Klasse im HTML gesteuert) */
+.navigation a.active::after {
+    width: 100%;
+}
+.navigation a.active {
+    color: var(--accent-gold);
+}
