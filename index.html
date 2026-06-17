@@ -3,86 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Natürlich Surer</title>
-    <link rel="stylesheet" href="SurerStyles.css">
+    <title>Natürlich Surer | Weidhof Arisdorf</title>
+    
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
-<header class="site-header">
-    <div class="header-top-row">
-        <a href="Index.html" class="logo">
-            <img src="LogoKuh.png" alt="Logo Natürlich Surer">
-        </a>
-        <nav class="navigation">
-            <ul>
-                <li><a href="Index.html" class="active">Home</a></li>
-                <li><a href="Geschichte.html">Geschichte</a></li>
-                <li><a href="Kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="header-title-area">
-        <h1>Willkommen bei Natürlich Surer</h1>
-        <div class="header-separator"></div>
-    </div>
-</header>
+    <canvas id="nature-canvas"></canvas>
 
-<main>
-    <div class="content-card">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
-            <p style="font-size: 1.2rem; color: #333; line-height: 1.8;">
-                Seit Generationen stehen wir für naturbelassene Produkte höchster Qualität. 
-                Auf dem Weidhof in Arisdorf verbinden wir echte Tradition mit verantwortungsvoller Landwirtschaft.
-            </p>
-        </div>
-        
-        <div class="grid-layout">
-            <div class="grid-item">
-                <h3>Frische Milchprodukte</h3>
-                <p>Direkt von unseren Kühen schonend verarbeitet. Geschmack, den man schmeckt.</p>
-            </div>
-            
-            <div class="grid-item">
-                <h3>Knackiges Obst & Gemüse</h3>
-                <p>Saisonal, regional und sonnengereift. Frisch von unseren Feldern direkt zu Ihnen.</p>
-            </div>
-            
-            <div class="grid-item">
-                <h3>Frisches Hof-Brot</h3>
-                <p>Nach traditionellen Rezepten gebacken. Knusprig, herzlich und unverfälscht.</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 4rem;">
-            <a href="downloads/preisliste-hofladen.pdf" download style="display: inline-block; padding: 1rem 2rem; background-color: var(--primary-green); color: white; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background 0.3s;" onmouseover="this.style.backgroundColor='#556324'" onmouseout="this.style.backgroundColor='#424d1b'">
-                📄 Aktuelle Hofladen-Preisliste herunterladen (PDF)
+    <header class="site-header" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="brand-logo">
+                <img src="assets/LogoKuh.png" alt="Logo Natürlich Surer" onerror="this.style.display='none'">
+                <span>Natürlich Surer</span>
             </a>
-        </div>
-    </div>
-</main>
+            
+            <div class="mobile-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>Natürlich Surer</h3>
-            <p>Echte Milch, echte Tradition. Wir verarbeiten das Beste aus der Region mit Respekt vor der Natur und dem Handwerk.</p>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#produkte" class="nav-link">Angebot</a></li>
+                    <li><a href="#geschichte" class="nav-link">Geschichte</a></li>
+                    <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="footer-section">
-            <h3>Adresse</h3>
-            <p>Weidhof 158<br>4422 Arisdorf BL<br>Schweiz</p>
-        </div>
-        <div class="footer-section">
-            <h3>Menü</h3>
-            <p><a href="Index.html">Home</a></p>
-            <p><a href="Geschichte.html">Geschichte</a></p>
-            <p><a href="Kontakt.html">Kontakt</a></p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2026 Naturally Surer. Est. 1920.</p>
-    </div>
-</footer>
+    </header>
 
-<script src="SurerScript.js"></script>
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Willkommen auf dem Weidhof</h1>
+            <div class="header-separator"></div>
+            <p class="hero-subtitle">Seit Generationen stehen wir für naturbelassene Produkte höchster Qualität. Echte Tradition und verantwortungsvolle Landwirtschaft in Arisdorf.</p>
+            <a href="#produkte" class="primary-btn">Unser Angebot entdecken</a>
+        </div>
+    </section>
+
+    <main class="content-wrapper">
+        
+        <section id="produkte" class="page-section">
+            <div class="section-header">
+                <h2>Frisch vom Hof</h2>
+                <p>Direkt aus der Natur auf Ihren Tisch</p>
+            </div>
+            
+            <div class="bento-grid">
+                <div class="bento-card">
+                    <div class="card-icon">🥛</div>
+                    <h3>Frische Milchprodukte</h3>
+                    <p>Direkt von unseren Kühen schonend verarbeitet. Geschmack, den man sofort schmeckt und der an echte Natur erinnert.</p>
+                </div>
+                <div class="bento-card">
+                    <div class="card-icon">🍎</div>
+                    <h3>Knackiges Obst & Gemüse</h3>
+                    <p>Saisonal, regional und sonnengereift. Frisch von unseren Feldern direkt zu Ihnen nach Hause.</p>
+                </div>
+                <div class="bento-card">
+                    <div class="card-icon">🍞</div>
+                    <h3>Frisches Hof-Brot</h3>
+                    <p>Nach traditionellen Rezepten gebacken. Knusprig, herzlich und unverfälscht – wie früher.</p>
+                </div>
+            </div>
+
+            <div class="download-center">
+                <a href="dokumenten/preisliste-hofladen.pdf" download class="download-btn">
+                    <span class="icon">📄</span> Aktuelle Hofladen-Preisliste (PDF)
+                </a>
+            </div>
+        </section>
+
+        <section id="geschichte" class="page-section alternate-bg">
+            <div class="section-header">
+                <h2>Unsere Geschichte</h2>
+                <p>Vom einfachen Landwirtschaftsbetrieb zum geschätzten Regionalpartner.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">1920</span>
+                        <p>Gründung des Weidhofs durch die Familie Surer. Die ersten Grundsteine für eine nachhaltige Viehzucht in Arisdorf werden gelegt.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">1955</span>
+                        <p>Modernisierung des Betriebs und Spezialisierung auf die Produktion naturbelassener Milchprodukte für die Region Basel-Landschaft.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">1980</span>
+                        <p>Erweiterung des Sortiments um hofeigenes Obst und Saisongemüse. Der Weidhof setzt konsequent auf naturnahen Anbau.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2005</span>
+                        <p>Übergabe an die nächste Generation. Einstieg in den Wochenmarkt-Verkauf, um den direkten Draht zu unseren Kunden zu stärken.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot highlight-dot"></div>
+                    <div class="timeline-content highlight-content">
+                        <span class="timeline-year">Heute</span>
+                        <p>Unter der Leitung von Otto und Marco Surer steht "Natürlich Surer" für kompromisslose Frische, Transparenz und traditionelles Handwerk.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="philosophy-box">
+                <h3>Unsere Philosophie</h3>
+                <p>Wir glauben, dass man Qualität schmeckt, wenn Tiere respektiert werden und der Boden nachhaltig bewirtschaftet wird. Das ist unser Versprechen an Sie.</p>
+            </div>
+        </section>
+
+        <section id="kontakt" class="page-section">
+            <div class="section-header">
+                <h2>Kontakt & Besuch</h2>
+                <p>Wir freuen uns auf Sie!</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h3>Besuchen Sie uns</h3>
+                    <p class="contact-sub">Verkauf von Obst, Gemüse, Milch, Brot u. vielem mehr!</p>
+                    
+                    <ul class="contact-list">
+                        <li><strong>📍 Adresse:</strong> Weidhof 158, 4422 Arisdorf BL</li>
+                        <li><strong>📞 Telefon:</strong> +41 (0) 79 464 07 08</li>
+                        <li><strong>✉️ E-Mail:</strong> surer.weidhof@gmail.com</li>
+                    </ul>
+                    
+                    <div class="opening-hours">
+                        <h4>Öffnungszeiten</h4>
+                        <p>Mo-Fr: 8:00 - 16:00 Uhr</p>
+                        <p>Sa: Birsfelden Sternenfeld Markt</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">OS</div>
+                    <h3>Otto Surer</h3>
+                    <span class="profile-role">Mitinhaber</span>
+                    <p>📞 +41 (0) 79 464 07 08</p>
+                    <p>✉️ surer.weidhof@gmail.com</p>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">MS</div>
+                    <h3>Marco Surer</h3>
+                    <span class="profile-role">Mitinhaber</span>
+                    <p>📞 +41 (0) 77 499 18 58</p>
+                    <p>✉️ surer.weidhof@gmail.com</p>
+                    <p>📱 Instagram: @natuerlich.surer</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Natürlich Surer</h3>
+                <p>Echte Milch, echte Tradition. Wir verarbeiten das Beste aus der Region mit Respekt vor der Natur und dem Handwerk.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> Natürlich Surer. Est. 1920.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Footer Jahr automatisch setzen
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // 2. Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mainNav = document.querySelector('.main-nav');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            });
+
+            // Menu schliessen, wenn ein Link geklickt wird (auf Mobile)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    mainNav.classList.remove('active');
+                });
+            });
+
+            // 3. Smooth Scrolling & Active State
+            const sections = document.querySelectorAll('section');
+            const header = document.getElementById('navbar');
+
+            // Header Background bei Scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Intersection Observer für Active Links
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentId = entry.target.getAttribute('id');
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${currentId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(sec => observer.observe(sec));
+
+            // 4. Natur-Canvas: Fliegende "Pollen / Sonnenstaub"
+            const canvas = document.getElementById('nature-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3 + 1;
+                    this.speedX = Math.random() * 0.5 - 0.25;
+                    this.speedY = Math.random() * -0.5 - 0.1; // Fliegen leicht nach oben
+                    this.opacity = Math.random() * 0.5 + 0.1;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    
+                    // Sanftes Ausblenden und Resetten, wenn sie den Bildschirm verlassen
+                    if (this.y < -10) {
+                        this.y = canvas.height + 10;
+                        this.x = Math.random() * canvas.width;
+                    }
+                    if (this.x > canvas.width + 10) this.x = -10;
+                    if (this.x < -10) this.x = canvas.width + 10;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    // Ein warmes, leuchtendes Bauernhof-Grün/Gelb
+                    ctx.fillStyle = `rgba(180, 200, 100, ${this.opacity})`; 
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                // Anzahl Partikel abhängig von Bildschirmbreite
+                const count = Math.min(Math.floor(window.innerWidth / 20), 80);
+                for (let i = 0; i < count; i++) particles.push(new Particle());
+            }
+            initParticles();
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        });
+    </script>
 </body>
 </html>
