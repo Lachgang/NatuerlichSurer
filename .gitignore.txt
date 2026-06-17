@@ -1,3 +1,6 @@
-# .gitignore Datei erstellen
+# Falls vorhanden:
 .DS_Store
 Thumbs.db
+Desktop.ini
+bin/
+obj/
